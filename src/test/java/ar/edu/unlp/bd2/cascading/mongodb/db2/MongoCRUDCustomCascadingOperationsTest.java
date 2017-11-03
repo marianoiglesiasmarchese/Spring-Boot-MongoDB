@@ -125,6 +125,7 @@ public class MongoCRUDCustomCascadingOperationsTest {
 		System.out.println("Debido a la persistencia por alcance, la direccion y los productos tambien se eliminan.");
 		System.out.println("#########################################################################");
 		
+		// TODO : Falta hacer que se remueva en cascada
 		mongoOperations.remove(negocio);
 		
 		System.out.println("#########################################################################");
