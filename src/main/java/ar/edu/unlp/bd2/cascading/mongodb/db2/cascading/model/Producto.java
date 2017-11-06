@@ -1,12 +1,14 @@
 package ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 public class Producto {
 
 	@Id
 	private String id;
 
+	@Indexed(unique = true)
 	private String nombre;
 	
 //	@CreatedDate
