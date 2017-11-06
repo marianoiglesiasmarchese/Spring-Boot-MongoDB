@@ -2,21 +2,9 @@ package ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * MongoDB stores data in collections. Spring Data MongoDB will map the class
- * Customer into a collection called customer. If you want to change the name of
- * the collection, you can use Spring Data MongoDB’s @Document annotation on the
- * class.
- */
-//@Document(collection = "personas")
 public class Persona {
 
-	/**
-	 * id fits the standard name for a MongoDB id so it doesn’t require any special
-	 * annotation to tag it for Spring Data MongoDB.
-	 */
 	@Id
 	private String id;
 
@@ -24,6 +12,12 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	private Long dni;
+	
+//	@CreatedDate
+//	private LocalDateTime createdDate;
+//	  
+//	@LastModifiedDate
+//	private LocalDateTime lastModifiedDate;
 	
 	public Persona(){};
 	
@@ -67,5 +61,5 @@ public class Persona {
 	public void setDni(Long dni) {
 		this.dni = dni;
 	}
-	
+
 }

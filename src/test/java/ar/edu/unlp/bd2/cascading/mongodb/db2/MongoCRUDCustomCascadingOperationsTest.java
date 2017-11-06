@@ -1,8 +1,5 @@
 package ar.edu.unlp.bd2.cascading.mongodb.db2;
 
-import java.awt.Color;
-import java.awt.SystemColor;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,26 +9,20 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Dueño;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Negocio;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Producto;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.RepositorioDeCliente;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Cliente;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MongoCRUDCustomCascadingOperationsTest {
-
-//	@Autowired
-//	private RepositorioDeNegocio repositorioDeNegocio;
 	
 	@Autowired
 	private MongoOperations mongoOperations;
+	
+//	private static final Log log = LogFactory.getLog(MongoCRUDOperationsTest.class);
 
 	private static String negocioObjectId;
 
@@ -102,8 +93,6 @@ public class MongoCRUDCustomCascadingOperationsTest {
 		System.out.println("#########################################################################");
 
 		negocio = mongoOperations.findById(negocioObjectId, Negocio.class);
-
-		// TODO 
 		
 		System.out.println("#########################################################################");
 		System.out.println("Modifico el nombre del primer producto de 'Pescado' a 'Café' y lo persisto el negocio.");
@@ -118,14 +107,12 @@ public class MongoCRUDCustomCascadingOperationsTest {
 		System.out.println("#########################################################################");
 		
 		negocio = mongoOperations.findById(negocioObjectId, Negocio.class);
-		// TODO: faltan finds a partir del repositorio.
 
 		System.out.println("#########################################################################");
 		System.out.println("Borro el unico negocio creado en el documento dominio.");
 		System.out.println("Debido a la persistencia por alcance, la direccion y los productos tambien se eliminan.");
 		System.out.println("#########################################################################");
 		
-		// TODO : Falta hacer que se remueva en cascada
 		mongoOperations.remove(negocio);
 		
 		System.out.println("#########################################################################");

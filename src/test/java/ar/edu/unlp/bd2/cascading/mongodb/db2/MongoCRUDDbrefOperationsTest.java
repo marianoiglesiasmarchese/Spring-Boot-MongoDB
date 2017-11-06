@@ -9,28 +9,19 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Dueño;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Negocio;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Producto;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.dbref.model.Distribuidor;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.RepositorioDeCliente;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Cliente;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Direccion;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MongoCRUDDbrefOperationsTest {
 
-//	@Autowired
-//	private RepositorioDeDistribuidor repositorioDeDistribuidor;
-
 	@Autowired
 	private MongoOperations mongoOperations;
+	
+//	private static final Log log = LogFactory.getLog(MongoCRUDOperationsTest.class);
 
 	private static String distribuidorObjectId;
 	
@@ -129,7 +120,6 @@ public class MongoCRUDDbrefOperationsTest {
 		System.out.println("#########################################################################");
 		
 		distribuidor = mongoOperations.findById(this.distribuidorObjectId, Distribuidor.class);
-		// TODO: faltan finds a partir del repositorio.
 
 		System.out.println("#########################################################################");
 		System.out.println("Borro el unico distribuidor creado en el documento dominio.");

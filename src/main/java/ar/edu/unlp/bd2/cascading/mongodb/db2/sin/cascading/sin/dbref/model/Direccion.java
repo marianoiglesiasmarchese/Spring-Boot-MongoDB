@@ -1,15 +1,19 @@
 package ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Document(collection = "direcciones")
 public class Direccion {
 
 	@Id
 	private String id;
 	
 	private String nombre;
+	
+//	@CreatedDate
+//	private Calendar createdDate;
+//	  
+//	@LastModifiedDate
+//	private Calendar lastModifiedDate;
 	
 	public Direccion() {}
 	

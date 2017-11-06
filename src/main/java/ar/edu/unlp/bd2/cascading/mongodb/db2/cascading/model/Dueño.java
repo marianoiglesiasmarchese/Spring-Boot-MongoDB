@@ -1,9 +1,7 @@
 package ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model;
 
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Direccion;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Persona;
 
-// @Document(collection = "dueños")
 public class Dueño extends Persona {
 
 	private String email;

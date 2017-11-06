@@ -2,13 +2,18 @@ package ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model;
 
 import org.springframework.data.annotation.Id;
 
-//@Document(collection = "productos")
 public class Producto {
 
 	@Id
 	private String id;
 
 	private String nombre;
+	
+//	@CreatedDate
+//	private Calendar createdDate;
+//	  
+//	@LastModifiedDate
+//	private Calendar lastModifiedDate;
 
 	public Producto() {
 	}

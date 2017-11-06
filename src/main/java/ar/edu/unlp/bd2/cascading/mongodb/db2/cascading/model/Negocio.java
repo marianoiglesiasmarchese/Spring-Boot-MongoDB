@@ -1,6 +1,5 @@
 package ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -8,9 +7,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.CascadeSave;
-import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Direccion;
 
-//@Document(collection = "negocios")
 public class Negocio {
 
 	@Id
@@ -26,6 +23,12 @@ public class Negocio {
 	@DBRef
 	@CascadeSave
 	public Dueño dueño;
+	
+//	@CreatedDate
+//	private Calendar createdDate;
+//	  
+//	@LastModifiedDate
+//	private Calendar lastModifiedDate;
 
 	public Negocio() {
 	}

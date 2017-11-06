@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.model.Producto;
 import ar.edu.unlp.bd2.cascading.mongodb.db2.sin.cascading.sin.dbref.model.Direccion;
 
-//@Document(collection = "distribuidores")
 public class Distribuidor {
 
 	@Id
@@ -24,6 +23,12 @@ public class Distribuidor {
 	@Indexed(unique = true)
 	private String nombre;
 	
+//	@CreatedDate
+//	private Calendar createdDate;
+//	  
+//	@LastModifiedDate
+//	private Calendar lastModifiedDate;
+	  
 	public Distribuidor() {};
 	
 	public Distribuidor(String nombre) {
