@@ -40,7 +40,7 @@ public class MongoCRUDDbrefOperationsTest {
 		System.out.println("Persisto un distribuidor para simular que ya se encontraba creado en la base y poder hacer la comparacion de comportamientos con el ejemplo que usa la simulacion de persistencia por alcance.");
 		System.out.println("#########################################################################");
 		
-		Distribuidor distribuidor = new Distribuidor("nini");
+		Distribuidor distribuidor = new Distribuidor("Nini");
 		mongoOperations.save(distribuidor);
 		this.distribuidorObjectId = distribuidor.getId();
 		
@@ -49,6 +49,8 @@ public class MongoCRUDDbrefOperationsTest {
 	@Test
 	public void contextLoads() {
 
+		long startTime = System.nanoTime();
+		
 		System.out.println("#########################################################################");
 		System.out.println("Recupero el distribuidor.");
 		System.out.println("Imprimo el distribuidor recuperado de la base sin direccion y sin productos.");
@@ -135,6 +137,11 @@ public class MongoCRUDDbrefOperationsTest {
 		List<Distribuidor> distribuidores = mongoOperations.findAll(Distribuidor.class);
 			
 		System.out.println("Cantidad de distribuidores recuperados: " + distribuidores.size());
+		
+		long endTime = System.nanoTime() - startTime; // tiempo en que se ejecuta su método
+		System.out.println("#########################################################################");
+		System.out.println("Tiempo demorado en la ejecucion del Test: " + endTime + " nanosegundos" );
+		System.out.println("#########################################################################");
 		
 	}
 
