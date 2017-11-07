@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
-import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.CascadeSave;
+import ar.edu.unlp.bd2.cascading.mongodb.db2.cascading.Cascade;
 
 public class Negocio {
 
@@ -17,11 +17,11 @@ public class Negocio {
 	private String nombre;
 
 	@DBRef
-	@CascadeSave
+	@Cascade
 	public List<Producto> productos;
 
 	@DBRef
-	@CascadeSave
+	@Cascade
 	public Dueño dueño;
 	
 //	@CreatedDate
