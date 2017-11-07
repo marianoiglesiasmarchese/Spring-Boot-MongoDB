@@ -138,7 +138,7 @@ public class MongoCRUDDbrefOperationsTest {
 			
 		System.out.println("Cantidad de distribuidores recuperados: " + distribuidores.size());
 		
-		long endTime = System.nanoTime() - startTime; // tiempo en que se ejecuta su método
+		long endTime = System.nanoTime() - startTime; 
 		System.out.println("#########################################################################");
 		System.out.println("Tiempo demorado en la ejecucion del Test: " + endTime + " nanosegundos" );
 		System.out.println("#########################################################################");
